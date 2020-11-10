@@ -10,3 +10,13 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+
+puts "Enter name for new store"
+print "> "
+store_name = $stdin.gets.chomp
+
+new_store = Store.new(name: store_name)
+new_store.valid?
+new_store.errors.each do |key, value| 
+  puts "Error with #{key}: #{value}"
+end
